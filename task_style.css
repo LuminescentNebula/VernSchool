@@ -55,7 +55,7 @@
         color: blue;
         font-style: italic;
     }
-    .extra > * {
+    .extra > .extra,.example {
         content: "+";
         margin-left: 20px;
     }
