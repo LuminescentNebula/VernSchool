@@ -29,7 +29,15 @@
         content: "Пример:";
     }
     .example+.example {
-       padding-top: 10px;
+        padding-top: 10px;
+    }
+    .horizontal {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .horizontal .example+.example {
+        padding-top: 0px;
     }
 
     .in {
@@ -58,5 +66,15 @@
     .extra > * {
         content: "+";
         margin-left: 20px;
+    }
+    pre {
+        margin-block: 0;
+    }
+    * {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    p {
+        margin-bottom: 10px;
     }
 
