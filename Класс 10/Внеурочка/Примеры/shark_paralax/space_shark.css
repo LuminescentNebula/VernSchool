@@ -1,142 +1,148 @@
-.container > * ,  .container {
-            transition-timing-function: ease;
-            transition-duration: 1s;
-        }
+.container>*,
+.container {
+    transition-timing-function: ease;
+    transition-duration: 1000ms;
+}
 
-        .container {
-            height: 500px;
-            width: 500px;
-            overflow: hidden;
-            background-image: url("stars.png");
-            background-size: 500px;
-            background-position-x: 0px;
-            background-position-y: 50px;
+.container {
+    height: 500px;
+    width: 500px;
+    overflow: hidden;
+    background-image: url("stars.png");
+    background-size: 500px;
+    background-position-x: 0px;
+    background-position-y: 50px;
 
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            transition-property: background-position-x;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition-property: background-position-x;
+    position: relative;
+}
 
-        .shark, .planet,.nebula {
-            position: fixed;
-            transition-property: transform;
-        }
-        .shark{
-            z-index: 5;
-        }
-        .planet {
-            z-index: 3;
-        }
-        .nebula {
-            z-index: 2;
-        }
+.shark,
+.planet,
+.nebula {
+    position: absolute;
+    transition-property: transform;
+}
 
-        .shark:nth-child(1){
-            top: 0px;
-            left: 0px;
-        }
+.shark {
+    z-index: 5;
+}
 
-        .shark:nth-child(2){
-            top: 270px;
-            left: 0px;
-        }
+.planet {
+    z-index: 3;
+}
 
-        .shark:nth-child(3){
-            top: -30px;
-            left: 270px;
-        }
+.nebula {
+    z-index: 2;
+    opacity: 40%;
+}
 
-        .planet:nth-child(4){
-            top: 270px;
-            left: 80px;
-        }
+.shark:nth-child(1) {
+    top: 0px;
+    left: 0px;
+}
 
-        .planet:nth-child(5){
-            top: 200px;
-            left: 400px;
-        }
+.shark:nth-child(2) {
+    top: 270px;
+    left: 0px;
+}
 
-        #planet1{
-            width: 50px;
-        }
+.shark:nth-child(3) {
+    top: -30px;
+    left: 270px;
+}
 
-        #planet2{
-            width: 70px;
-        }
+.planet:nth-child(4) {
+    top: 270px;
+    left: 80px;
+}
 
-        #shark2 {
-            width: 150px;
-            rotate: -50deg;
-        }
+.planet:nth-child(5) {
+    top: 200px;
+    left: 400px;
+}
 
-        #shark3 {
-            width: 250px;
-            rotate: 160deg;
-        }
-        .nebula {
-            opacity: 40%;
-        }
-        .nebula > img {
-            width: 600px;
-        }
+#planet1 {
+    width: 50px;
+}
 
+#planet2 {
+    width: 70px;
+}
 
-        .caption {
-            position: relative;
-            z-index: 10;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 0px;
-            transition-property: transform;
-        }
+#shark2 {
+    width: 150px;
+    rotate: -50deg;
+}
 
-        .caption>p {
-            color: white;
-            margin-top: 0px;
-            margin-left: 0px;
-            margin-right: 0px;
-            margin-bottom: 10px;
-            font-family: "Oxanium";
-            font-size: 2.5em;
-            text-shadow:
-                2px 0 #000,
-                -2px 0 #000,
-                0 2px #000,
-                0 -2px #000,
-                1px 1px #000,
-                -1px -1px #000,
-                1px -1px #000,
-                -1px 1px #000;
+#shark3 {
+    width: 250px;
+    rotate: 160deg;
+}
 
-        }
-        
-        .caption>p:nth-child(2) {
-            color: palegoldenrod;
-        }
-        /*
-        .container:hover > .caption {
-            transform: translateX(40px);
-        }*/
-        .container:hover > .shark:nth-child(1) {
-            transform: translateX(40px);
-        }
-        .container:hover > .shark:nth-child(2){
-            transform: translateX(15px);
-        }        
-        .container:hover > .shark:nth-child(3) {
-            transform: translateX(20px);
-        }
-        .container:hover > .planet:nth-child(4){
-            transform: translateX(10px);
-        }        
-        .container:hover > .planet:nth-child(5){
-            transform: translateX(10px);
-        }        
+.nebula>img {
+    width: 600px;
+}
 
-        .container:hover > .nebula{
-            transform: translateX(10px);
-        }
+.caption {
+    position: relative;
+    z-index: 10;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0px;
+    transition-property: transform;
+}
+
+.caption>p {
+    color: white;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    font-family: "Oxanium";
+    font-size: 2.5em;
+    text-shadow:
+        2px 0 #000,
+        -2px 0 #000,
+        0 2px #000,
+        0 -2px #000,
+        1px 1px #000,
+        -1px -1px #000,
+        1px -1px #000,
+        -1px 1px #000;
+
+}
+
+.caption>p:nth-child(2) {
+    color: palegoldenrod;
+}
+
+.container:hover>.shark:nth-child(1) {
+    transform: translateX(40px);
+}
+
+.container:hover>.shark:nth-child(2) {
+    transform: translateX(15px);
+}
+
+.container:hover>.shark:nth-child(3) {
+    transform: translateX(20px);
+}
+
+.container:hover>.planet:nth-child(4) {
+    transform: translateX(10px);
+}
+
+.container:hover>.planet:nth-child(5) {
+    transform: translateX(10px);
+}
+
+.container:hover>.nebula {
+    transform: translateX(10px);
+}
