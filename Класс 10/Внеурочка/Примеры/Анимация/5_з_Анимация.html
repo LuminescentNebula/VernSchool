@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        .container1 {
+            width: 150px;
+            height: 150px;
+            transition-property: transform;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            transition-delay: 1s;
+        }
+
+        .square {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            /*Сокращенная запись - шортхэнд*/
+            transition: transform 1s ease 0s;
+        }
+
+        .container1:hover {
+            transform: rotateX(180deg);
+        }
+
+        .container1:hover>.square {
+            transform: rotateY(180deg);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>1) Вращающийся квадрат<br>
+        <img src="loading_1.gif" width="200">
+        <div class="container1">
+            <div class="square"></div>
+        </div>
+    </div>
+</body>
