@@ -1,0 +1,81 @@
+<!--png-->
+<!DOCTYPE html>
+<head>
+  <title>Флаги</title>
+  <style>
+    table {
+      border: 1px black solid;
+      border-spacing: 0px;
+      margin-bottom: 10px;
+    }
+    .one-third {
+      padding: 0px;
+      height: 50px;
+      width: 300px;
+    }
+    .one-third-bar {
+      padding: 0px;
+      height: 50px;
+      width: 230px;
+    }
+    .bar {
+      padding: 0px;
+      width: 70px;
+    }
+    .vertical {
+      padding: 0px;
+      height: 150px;
+      width: 100px;
+    }
+    .Russia{
+        position:relative;
+        left:90px;
+        z-index: 5;
+    }
+    .UAE{
+        position: relative;
+        left:40px;
+        bottom:90px;
+        z-index:3;
+    }
+    .France{
+        position: relative;
+        bottom:190px;
+        z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Флаги</h1>
+  <p>С помощью HTML и CSS сделать несколько флагов накладывающихся друг на друга. Для создания классов можно использовать таблицы или div, если все совсем плохо, то картинки. Вертикальным положением флагов управляйте с помощью <i>z-index</i></p>
+  <table class="Russia">
+    <tr style="background-color: white">
+      <td class="one-third"></td>
+    </tr>
+    <tr style="background-color: blue">
+      <td class="one-third"></td>
+    </tr>
+    <tr style="background-color: red">
+      <td class="one-third"></td>
+    </tr>
+  </table>
+  <table class="UAE">
+    <tr>
+      <td rowspan="3" class="bar" style="background-color: red"></td>
+      <td class="one-third-bar" style="background-color: green"></td>
+    </tr>
+    <tr style="background-color: white">
+      <td class="one-third-bar"></td>
+    </tr>
+    <tr style="background-color: black">
+      <td class="one-third-bar"></td>
+    </tr>
+  </table>
+  <table class="France">
+    <tr>
+      <td style="background-color: blue" class="vertical"></td>
+      <td class="vertical" style="background-color: white"></td>
+      <td style="background-color: red" class="vertical"></td>
+    </tr>
+  </table>
+</body>
