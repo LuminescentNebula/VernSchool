@@ -1,6 +1,6 @@
 import subprocess
 import os
-from pathlib import Path
+from pathlib import Path,PosixPath
 from pprint import pprint
 
 root_path = Path('.')
@@ -58,7 +58,10 @@ def convert_py_to_txt(path: Path):
     new_path.parent.mkdir(parents=True, exist_ok=True)
     new_path = new_path.with_suffix(".txt")
     print('"'+str(path)+'"', '".\\'+str(new_path)+'"')
-    os.system(" ".join(["copy",'"'+str(path)+'"', '"'+str(new_path)+'"']))
+    if  isinstance(new_path,PosixPath):
+        os.system(" ".join(["cp",'"'+str(path)+'"', '"'+str(new_path)+'"']))
+    else:
+        os.system(" ".join(["copy",'"'+str(path)+'"', '"'+str(new_path)+'"']))
 
 #all_convert_ipynb_to_pdf()
 all_convert_py_to_txt()
