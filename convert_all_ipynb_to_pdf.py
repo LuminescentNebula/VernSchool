@@ -1,7 +1,10 @@
 import subprocess
 import os
 from pathlib import Path,PosixPath
+from pathlib import Path,PosixPath
 from pprint import pprint
+import sys
+from playwright.sync_api import sync_playwright
 import sys
 from playwright.sync_api import sync_playwright
 
@@ -50,17 +53,52 @@ def convert_ipynb_to_pdf(ipynb_path: Path):
 
 
 def all_change_extension():
+def all_change_extension():
     files = [p for p in root_path.rglob('*.py') if 'Теория' in p.parts]
     pprint(files)
     for file in files:
         change_extension(file, "txt")    
+    for file in files:
+        change_extension(file, "txt")    
 
+def change_extension(path: Path, to:str):
 def change_extension(path: Path, to:str):
     new_path_parts = ('Релиз',) + path.parts
     new_path = Path(*new_path_parts)
     new_path.parent.mkdir(parents=True, exist_ok=True)
     new_path = new_path.with_suffix("."+ to)
+    new_path = new_path.with_suffix("."+ to)
     print('"'+str(path)+'"', '".\\'+str(new_path)+'"')
+    if isinstance(new_path, PosixPath):
+        os.system(" ".join(["cp",'"'+str(path)+'"', '"'+str(new_path)+'"']))
+    else:
+        os.system(" ".join(["copy",'"'+str(path)+'"', '"'+str(new_path)+'"']))
+
+def all_convert_drawio():
+    files = [p for p in root_path.rglob('*.drawio') if 'Теория' in p.parts]
+    pprint(files)
+    for file in files:
+        convert_drawio(file)    
+
+def convert_drawio(path: Path):
+    pass
+
+def all_html():
+    files = [p for p in root_path.rglob('*.html') if ('Теория' in p.parts) and ('Релиз' not in p.parts)]
+    pprint(files)
+    for file in files:
+        copy_html(file)  
+        convert_html_to_pdf(file)
+
+def copy_html(path: Path):
+    new_path_parts = ('Релиз',) + path.parts
+    new_path = Path(*new_path_parts)
+    new_path.parent.mkdir(parents=True, exist_ok=True)
+    print('"'+str(path)+'"', '"'+str(new_path)+'"')
+    if isinstance(new_path, PosixPath):
+        os.system(" ".join(["cp",'"'+str(path)+'"', '"'+str(new_path)+'"']))
+    else:
+        os.system(" ".join(["copy",'"'+str(path)+'"', '"'+str(new_path)+'"']))
     if isinstance(new_path, PosixPath):
         os.system(" ".join(["cp",'"'+str(path)+'"', '"'+str(new_path)+'"']))
     else:
