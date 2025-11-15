@@ -1,80 +1,79 @@
-    body {
-        font-family: "Roboto", sans-serif;
-    }
-    .task {
-        display: block;
-        max-width: 75%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 50px;
-        margin-bottom: 50px;
-        background-color: whitesmoke;
-        font-size: 2rem;
-        border: 1px black solid;
-        padding: 5px;
-    }
-    .description::before{
-        color: blue;
-        font-style: italic;
-        content: "На оценку "attr(mark)":"
-    }
-    .description{
-        padding-bottom: 20px;
-    }
-    .example {
-        color: blue;
-        padding-bottom: 10px;
-    }
-    .example::before{
-        content: "Пример:";
-    }
-    .example+.example {
-        padding-top: 10px;
-    }
-    .horizontal {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    .horizontal .example+.example {
-        padding-top: 0px;
-    }
+@charset "UTF-8";
 
-    .in {
-        color: orangered
-    }
-
-    .out {
-        color:black
-    }
-    .extras{
-        padding-top: 10px;
-    }
-    .extras::before{
-        content: "Задания на повышение оценки:";
-        color: blue;
-    }
-    .extra {
-        counter-reset: extra;
-    }
-    .extra::before  {
-        counter-increment: extra;
-        content: "+"counters(extra,"+",none)":";
-        color: blue;
-        font-style: italic;
-    }
-    .extra > .extra,.example {
-        content: "+";
-        margin-left: 20px;
-    }
-    pre {
-        margin-block: 0;
-    }
-    * {
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-    p {
-        margin-bottom: 10px;
-    }
-
+body {
+    font-family: "Roboto", sans-serif;
+}
+.task {
+    display: block;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: whitesmoke;
+    font-size: 2rem;
+    border: 1px black solid;
+    padding: 5px;
+}
+.description::before{
+    color: blue;
+    font-style: italic;
+    content: "На оценку "attr(mark)":"
+}
+.description{
+    padding-bottom: 20px;
+}
+.example {
+    color: blue;
+    padding-bottom: 10px;
+}
+.example::before{
+    content: "Пример:";
+}
+.example+.example {
+    padding-top: 10px;
+}
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.horizontal .example+.example {
+    padding-top: 0px;
+}
+.in {
+    color: orangered
+}
+.out {
+    color:black
+}
+.extras{
+    padding-top: 10px;
+}
+.extras::before{
+    content: "Задания на повышение оценки:";
+    color: blue;
+}
+.extra {
+    counter-reset: extra;
+}
+.extra::before  {
+    counter-increment: extra;
+    content: "+"counters(extra,"+",none)":";
+    color: blue;
+    font-style: italic;
+}
+.extra > .extra,.example {
+    content: "+";
+    margin-left: 20px;
+}
+pre {
+    margin-block: 0;
+}
+* {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+p {
+    margin-bottom: 10px;
+}
