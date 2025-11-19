@@ -1,7 +1,6 @@
 import subprocess
 import os
 from pathlib import Path,PosixPath
-from pathlib import Path,PosixPath
 from pprint import pprint
 import sys
 from playwright.sync_api import sync_playwright
