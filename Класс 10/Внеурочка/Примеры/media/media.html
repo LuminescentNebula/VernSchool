@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="media.css">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menu-button">
+            <div class="menu-button-icon">
+                <img src="https://www.svgrepo.com/show/533523/house-window.svg">
+            </div>
+            <div class="menu-button-name">Главная</div>
+        </div>
+        <div class="menu-button">
+            <div class="menu-button-icon">
+                <img src="https://www.svgrepo.com/show/532031/cloud-fog.svg">
+            </div>
+            <div class="menu-button-name">Погода</div>
+        </div>
+        <div class="menu-button">
+            <div class="menu-button-icon">
+                <img src="https://www.svgrepo.com/show/532138/align-alt.svg">
+            </div>
+            <div class="menu-button-name">Статьи</div>
+        </div>
+        <div class="menu-button">
+            <div class="menu-button-icon">
+                <img src="https://www.svgrepo.com/show/533074/gaming-pad-alt-1.svg">
+            </div>
+            <div class="menu-button-name">Игры</div>
+        </div>
+        <div class="menu-button">
+            <div class="menu-button-icon">
+                <img src="https://www.svgrepo.com/show/532268/dice-two.svg">
+            </div>
+            <div class="menu-button-name">Рандом</div>
+        </div>
+    </div>
+    <div class="list"></div>
+    <script>
+        /*Спойлеры*/
+        /*Javascript код для добавления 50-и div в list*/
+        const list = document.querySelector('.list');
+
+        for (let i = 0; i < 50; i++) {
+            const box = document.createElement('div');
+            box.classList.add('box');
+            list.appendChild(box);
+        }
+    </script>
+</body>
+
+</html>
