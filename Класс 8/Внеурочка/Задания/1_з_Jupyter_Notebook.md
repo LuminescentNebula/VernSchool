@@ -1,0 +1,1 @@
+Скачать Jupyter Notebook и установить библиотеки для python: matplotlib, pandas, numpy
