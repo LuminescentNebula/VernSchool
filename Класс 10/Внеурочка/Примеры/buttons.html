@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #btn {
+                background-color: rgb(163, 120, 120);
+                width: 500px;
+                height: 500px;
+                border: 1px;
+                border-radius: 25%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+                justify-content: center;
+                align-items: center;
+                align-content: flex-start;
+                overflow: hidden;
+
+                
+            }
+            .el {
+                width: 25px;
+                height: 25px;
+                background-color: burlywood;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="btn"></div>
+        <script>
+            element = document.getElementById("btn");
+            element.onclick = () => {
+                //alert("Нажатие");
+                console.log("Нажали")
+                for (let i=0;i<3;i++){
+                    x = document.createElement("p")
+                    x.className = "el"
+                    element.appendChild(x)
+                }
+            }
+            element.addEventListener('mousemove', function() { 
+                console.log("Движение")
+             })
+        </script>
+    </body>
+</html>
