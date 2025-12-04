@@ -1,0 +1,87 @@
+classDiagram
+
+class KeyboardController {
+    -dict keys
+    +__init__()
+    +get_input() tuple
+}
+
+class Entity {
+    #int x
+    #int y
+    #int width
+    #int height
+    #tuple color
+    #int speed
+    #Rect rect
+    +__init__(x, y, width, height, color, speed)
+    +move(dx, dy)
+    +update()
+    +draw(screen)
+}
+
+class RandomController {
+    -int dx
+    -int dy
+    -float change_direction_chance
+    +__init__(change_direction_chance)
+    +get_input() tuple
+}
+
+class Player {
+    -KeyboardController controller
+    +__init__(x, y)
+    +update()
+}
+
+class Enemy {
+    -RandomController controller
+    +__init__(x, y)
+    +update()
+}
+
+class Game {
+    -Surface screen
+    -Clock clock
+    -list~Entity~ entities
+    -bool running
+    +__init__()
+    +handle_events()
+    +update()
+    +draw()
+    +run()
+}
+
+Game o-- Entity : агрегация
+
+
+class Controller {
+    +get_input() tuple
+}
+
+KeyboardController --|> Controller: наследование
+RandomController --|> Controller : наследование
+
+namespace 1 {
+    class Game
+}
+
+
+namespace 3{
+    class Entity
+}
+namespace 2 {
+    class Player
+    class Enemy
+}
+Player *-- KeyboardController : композиция
+Enemy *-- RandomController : композиция
+
+namespace 4{
+    class KeyboardController
+    class RandomController
+    class Controller
+}
+
+Entity <|-- Player : наследование
+Entity <|-- Enemy : наследование
