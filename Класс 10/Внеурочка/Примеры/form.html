@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <form id="myForm">
+      <input name="name" type="text" />
+      <button type="submit">Отправить форму (submit)</button>
+    </form>
+    <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Отменяет стандартную отправку формы
+
+          // Собираем данные формы
+          const formData = new FormData(this);
+
+          console.log(formData.get("name"))
+      });
+    </script>
+  </body>
+</html>

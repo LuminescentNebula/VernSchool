@@ -1,0 +1,51 @@
+<!--png-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" rel="stylesheet" href="/task_style.css" />
+  </head>
+
+  <body>
+    <div class="task">
+      <div class="description" mark="3">
+        Для олимпиады необходимо разделить учеников по группам. Всего есть:
+        <ul>
+          <li>N девочек</li>
+          <li>M мальчиков</li>
+        </ul>
+        Группы доллжны быть одинковыми по количеству мальчиков и девочек.
+        Организаторы хотят вычислить, сколько группы можно сделать.
+        
+      </div>
+      <div class="example">
+        <div class="in">24<br />18</div>
+        <div class="out">
+          Можно сделать 6 групп<br />
+          В каждом группе будет 4 мальчика и 3 девочки
+        </div>
+      </div>
+      <div class="extras">
+        <div class="extra">
+          Если группы нельзя сделать одинковыми
+          остатков, то вывести "Группы нельзя сделать одинковыми"
+        </div>
+        <div class="extra">
+          Организаторы решили, что группы должны быть не меньше заданного
+          размера. Добавьте проверку, что в группе суммарно не меньше S человек.
+          S вводится с клавиатуры
+          <div class="example">
+            <div class="in">36<br />24<br />7</div>
+            <div class="out">
+              Нельзя собрать группы с таким минимальным размером.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
